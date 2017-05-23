@@ -34,6 +34,15 @@ public class TowarServiceImpl implements ITowarService {
         return towarConverter.obListToDtoList(pListOB);
     }
 
+
+    @Override
+    public List<TowarDTO> findByOdNajnizszejCeny(){
+        List<TowarOB> pListOB = towarRepository.findByOdNajnizszejCeny();
+
+        return towarConverter.obListToDtoList(pListOB);
+    }
+
+
     @Override
     public List<TowarDTO> findAllForTable() {
         List<TowarOB> obList = towarRepository.findAll();

@@ -15,4 +15,6 @@ public interface ITowarService {
     TowarDTO save(TowarDTO userDTO);
 
     List<TowarDTO> findByNazwaZawiera(String aNazwa);
+
+    List<TowarDTO> findByOdNajnizszejCeny();
 }

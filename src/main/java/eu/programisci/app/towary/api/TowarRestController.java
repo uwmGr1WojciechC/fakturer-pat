@@ -32,6 +32,11 @@ public class TowarRestController {
         return towarService.findAllForTable();
     }
 
+    @RequestMapping(value = "/findByOdNajnizszejCeny", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<TowarDTO> findByOdNajnizszejCeny() {
+        return towarService.findByOdNajnizszejCeny();
+    }
+
     @RequestMapping(value = "/deleteOne", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void deleteOne(@RequestParam("id") Long aId) {
         towarService.deleteOne(aId);

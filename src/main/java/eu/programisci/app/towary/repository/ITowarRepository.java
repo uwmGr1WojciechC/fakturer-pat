@@ -16,4 +16,8 @@ public interface ITowarRepository extends JpaRepository<TowarOB,Long> {
 
     @Query("SELECT t FROM TowarOB t WHERE UPPER(t.nazwa) LIKE CONCAT('%',UPPER(:nazwa),'%') ORDER BY t.creationDate DESC")
     List<TowarOB> findByNazwaZawiera(@Param("nazwa") String aNazwa);
+
+
+    @Query("SELECT t FROM TowarOB t ORDER BY t.cenaNetto ASC")
+    List<TowarOB> findByOdNajnizszejCeny();
 }
