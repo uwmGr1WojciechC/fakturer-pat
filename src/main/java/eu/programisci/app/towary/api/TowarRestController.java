@@ -22,6 +22,11 @@ public class TowarRestController {
         return towarService.findOne(aId);
     }
 
+    @RequestMapping(value = "/findByNazwaZawiera", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<TowarDTO> findByNazwaZawiera(@RequestParam("nazwa") String aNazwa) {
+        return towarService.findByNazwaZawiera(aNazwa);
+    }
+
     @RequestMapping(value = "/findAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<TowarDTO> findAll() {
         return towarService.findAllForTable();

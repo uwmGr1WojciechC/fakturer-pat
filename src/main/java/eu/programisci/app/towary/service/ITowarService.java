@@ -13,4 +13,6 @@ public interface ITowarService {
     void deleteOne(Long id);
 
     TowarDTO save(TowarDTO userDTO);
+
+    List<TowarDTO> findByNazwaZawiera(String aNazwa);
 }

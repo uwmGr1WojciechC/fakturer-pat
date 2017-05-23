@@ -27,6 +27,14 @@ public class TowarServiceImpl implements ITowarService {
     }
 
     @Override
+    public List<TowarDTO> findByNazwaZawiera(String aNazwa){
+        //List<TowarOB> pListOB = towarRepository.findByNazwaLikeIgnoreCase("%" + aNazwa + "%");
+        List<TowarOB> pListOB = towarRepository.findByNazwaZawiera(aNazwa);
+
+        return towarConverter.obListToDtoList(pListOB);
+    }
+
+    @Override
     public List<TowarDTO> findAllForTable() {
         List<TowarOB> obList = towarRepository.findAll();
         List<TowarDTO> dtoList = towarConverter.obListToDtoList(obList);

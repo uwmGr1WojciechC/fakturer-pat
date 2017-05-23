@@ -24,6 +24,7 @@ public class TowarOB {
     @Column(name = "pkwiu")
     private String pkwiu;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "jednostkaMiary")
     private EJednostkaMiary jednostkaMiary;
 
